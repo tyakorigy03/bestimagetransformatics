@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            overflow-x: hidden;
+            padding: 0px;
+            margin: 0px;
+        }
+        .main{
+            height: 100vh;
+            width: 100vw;
+            overflow-x: hidden;
+            background:linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)), url('images/51bd4c2a7bdc2bff576cd5a6377136bd.jpg');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .images{
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            top: 0px;
+            left: 0px;
+        }
+        .images .images-container{
+            height: 100%;
+            width: 100%;
+            position: relative;
+        }
+        .images .images-container img{
+            height: 35%;
+            width: 30%;
+            background: rgba(0, 0,0,0.6);
+            border-radius: 25px;
+            position: absolute;
+            transition: 0.6s ease;
+            object-fit: cover;
+            box-shadow: 0px 0px 30px #001b7297;
+            border: 10px solid #001b7297;
+                    }
+        .images .images-container img:hover{
+            height: 36%;
+            width: 32%;
+            z-index: 100;
+        }
+        .images .images-container img:nth-child(4){
+            transform:   rotate(5deg) ;
+            right: 1%;
+            top: 3%;
+        }
+        .images .images-container img:nth-child(3){
+            transform:   rotate(-10deg) ;
+            right: 7%;
+            top:35% ;
+        }
+        .images .images-container img:nth-child(2), .images .images-container img:nth-child(1){
+            bottom: 0%;
+        }
+        .images .images-container img:nth-child(2){
+            right:15% ;
+            transform:   rotate(10deg) ;
+        }
+        .images .images-container img:nth-child(1){
+            right:17% ;
+            bottom: -3%;
+            transform:   rotate(10deg) ;
+        }
+        .main .w-text{
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100%;
+        }
+        .main .w-text h2{
+            font-size: 90px;
+            max-width: 60%;
+            padding: 10px 50px ;
+        }
+
+    </style>
+</head>
+<body>
+ <div class="main">
+        <div class="w-text">
+            <h2>welcome to our picture Galaxy</h2>
+        </div>
+        <div class="images">
+            <div class="images-container">
+                 <img onclick="bgfn(this)" src="images/51bd4c2a7bdc2bff576cd5a6377136bd.jpg" loading="lazy" alt="">
+                 <img onclick="bgfn(this)" src="images/ddea410385a189c0eb297c6d225714b6.jpg" loading="lazy" alt="">
+                 <img onclick="bgfn(this)" src="images/e6fc69ba92dc84c017fff881a9d32210.jpg" loading="lazy" alt="">
+                 <img onclick="bgfn(this)" src="images/f6630b845b591669b240363d05ead1ee.jpg" loading="lazy" alt="">
+            </div>
+        </div>    
+ </div>   
+
+    <script>
+const bgfn=(img)=>{
+                document.querySelector('.main').style.background=`linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)), url('${img.src}')`;
+                document.querySelector('.main').style.backgroundPosition='center';
+                document.querySelector('.main').style.backgroundRepeat='no-repeat';
+                document.querySelector('.main').style.backgroundSize='cover';
+
+
+            }
+    </script>
+</body>
+</html>
